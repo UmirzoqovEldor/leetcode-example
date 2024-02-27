@@ -761,23 +761,22 @@
 //     {id:6,name:'AShmat',age:15}]
 
 //     for (let i = 0; i < obj.length; i++) {
-        
+
 //     }
 //  let arry = [1,3,[4,5], [7,9],6]
 // function getArry(params) {
 //     let nums=[]
 //     for(let num of params){
 //         if (!Array.isArray(num)) {
-//            nums.push(num) 
+//            nums.push(num)
 //         }else{
-             
+
 //         nums.push(...num)
 //         }
 //     }
 //     console.log(nums);
 // }
 // getArry(arry)
-
 
 // Array.prototype.last = function() {
 //     if (this.length===0) {
@@ -791,31 +790,63 @@
 // let arr= []
 // console.log( arr.last());
 // var uniqueOccurrences = function(nums) {
-    
+
 //         nums.sort();
-    
+
 //         for (let i = 1; i < nums.length; i++) {
 //             if (nums[i] === nums[i - 1]) {
-//                 return (nums[i]); 
+//                 return (nums[i]);
 //             }
 //         }
-    
-        
+
 //         return null;
-    
-   
+
 // };uniqueOccurrences([2,1,2,5,3,2])
-var findFinalValue = function(nums,) {
 
-  let num = nums.sort((a,b)=>a-b)
-  let x = num[num.length-1]
-  let y = num[num.length-2]
-  let m = num[0]
-  let n =num[1]
- return x*y-n*m
-    
-    
-  
-    
-};findFinalValue([5,6,2,7,4])
+// var sortSentence = function (s) {
+//   let srt = s.split(" ")
+//   let str2 = srt.map((val)=>val.split(""))
+//  let str3 = str2.map((arr)=>arr.reverse())
+//  let str4 = str3.map((x)=>x.join(""))
+//  let m = str4.sort()
+//  let arrr= []
+// for (let i = 0; i < m.length; i++) {
+//   arrr.push(m[i].split("").splice(1).reverse().join(""));
 
+// }
+// console.log(arrr);
+// //  let srt5 =m.map((x)=>x.split("").splice(1).reverse().join(" "))
+// //  console.log(srt5);
+
+// };
+// function sortSentence(s = "") {
+//   let arr = s
+//     .split(" ")
+//     .map((str) => [str.charAt(str.length - 1), str.slice(0, str.length - 1)]);
+//   return arr
+//     .sort((item, itemNext) => item[0] - itemNext[0])
+//     .map((i) => i[1])
+//     .join(" ");
+// }
+
+// console.log(sortSentence("is2 sentence4 This1 a3"));
+var divideArray = function (nums) {
+  let str = nums.sort((a, b) => a - b);
+  let arr = [];
+
+  for (let i = 0; i < str.length; i = i + 2) {
+    if (str[i] === str[i + 1]) {
+      arr.push(true);
+    } else {
+      arr.push(false);
+    }
+  }
+
+  let num = [...new Set(arr)];
+  if (num.length===1&&num[0]==true) {
+    return (true);
+  }else{
+    return(false);
+  }
+};
+divideArray([1, 2, 3, 4]);
