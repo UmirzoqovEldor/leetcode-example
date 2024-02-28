@@ -830,23 +830,47 @@
 // }
 
 // console.log(sortSentence("is2 sentence4 This1 a3"));
-var divideArray = function (nums) {
-  let str = nums.sort((a, b) => a - b);
-  let arr = [];
+// var divideArray = function (nums) {
+//   let str = nums.sort((a, b) => a - b);
+//   let arr = [];
 
-  for (let i = 0; i < str.length; i = i + 2) {
-    if (str[i] === str[i + 1]) {
-      arr.push(true);
-    } else {
-      arr.push(false);
+//   for (let i = 0; i < str.length; i = i + 2) {
+//     if (str[i] === str[i + 1]) {
+//       arr.push(true);
+//     } else {
+//       arr.push(false);
+//     }
+//   }
+
+//   let num = [...new Set(arr)];
+//   if (num.length===1&&num[0]==true) {
+//     return (true);
+//   }else{
+//     return(false);
+//   }
+// };
+// divideArray([1, 2, 3, 4]);
+
+var canBeEqual = function (target, arr) {
+  let x = target.sort((a,b)=>a-b)
+  let y = arr.sort((a,b)=>a-b)
+  let num =[]
+  for (let i = 0; i < x.length; i++) {
+    if (x[i]===y[i]) {
+      num.push(true)
+    }else{
+      num.push(false)
     }
+    
   }
+  
+  
+let m =[...new Set(num)]
 
-  let num = [...new Set(arr)];
-  if (num.length===1&&num[0]==true) {
-    return (true);
+  if (m.length===1&&m[0]===true) {
+    console.log(true);
   }else{
-    return(false);
-  }
+    console.log(false);
+  } 
 };
-divideArray([1, 2, 3, 4]);
+canBeEqual([1,2,3,4], [2,4,1,3]);
