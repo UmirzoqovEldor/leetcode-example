@@ -851,26 +851,40 @@
 // };
 // divideArray([1, 2, 3, 4]);
 
-var canBeEqual = function (target, arr) {
-  let x = target.sort((a,b)=>a-b)
-  let y = arr.sort((a,b)=>a-b)
-  let num =[]
-  for (let i = 0; i < x.length; i++) {
-    if (x[i]===y[i]) {
-      num.push(true)
-    }else{
-      num.push(false)
-    }
-    
-  }
-  
-  
-let m =[...new Set(num)]
+// var canBeEqual = function (target, arr) {
+//   let x = target.sort((a,b)=>a-b)
+//   let y = arr.sort((a,b)=>a-b)
+//   let num =[]
+//   for (let i = 0; i < x.length; i++) {
+//     if (x[i]===y[i]) {
+//       num.push(true)
+//     }else{
+//       num.push(false)
+//     }
 
-  if (m.length===1&&m[0]===true) {
-    console.log(true);
-  }else{
-    console.log(false);
-  } 
+//   }
+
+// let m =[...new Set(num)]
+
+//   if (m.length===1&&m[0]===true) {
+//     console.log(true);
+//   }else{
+//     console.log(false);
+//   }
+// };
+// canBeEqual([1,2,3,4], [2,4,1,3]);
+var sumOfUnique = function (nums) {
+  
+  let count = 0;
+  
+  for (let i = 0; i < nums.length; i++) {
+    
+    if (nums.indexOf(nums[i]) !== nums.lastIndexOf(nums[i])) {
+     continue;
+    }
+    count+= +nums[i]
+    
+   }
+  console.log(count);
 };
-canBeEqual([1,2,3,4], [2,4,1,3]);
+sumOfUnique([1,2,3,2]);
